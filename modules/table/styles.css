@@ -1,0 +1,163 @@
+.scoreboard {
+	height: 100vh;
+	width: 100vw;
+}
+
+body {
+    background: url(/images/bg.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.federation	{
+	background-color: #2A2D34;
+	display: flex; 
+	justify-content: center;
+	align-items: center;
+	padding: 0.5%;
+	height: 10vh;
+}
+
+.federation img {
+	width: 3%;
+	border-radius: 50%;
+}
+
+.federation h1 {
+	margin: 0 0 0 2%;
+	font-size: 45px;
+}
+
+.category {
+	background-color: #F26430;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0.2%;
+	height: 10vh;
+}
+
+.category h1 {
+	margin: 0 10%;
+	font-size: 45px;
+}
+
+.category_name {
+	margin: 0 10%;
+	width: 15%;
+	font-size: 45px;
+}
+
+.contestants {
+	background-color: #fff;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.2%;
+	height: 10vh;
+}
+
+.contestants h1 {
+	margin: 0 4%;
+	font-size: 40px;
+	color: #F26430;
+}
+
+.scores_div {
+	padding: 0 3%;
+	height: 60vh;
+}
+
+.country {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20vh;
+}
+
+.country img {
+	width: 10%;
+}
+
+.country h1 {
+	margin: 0 5%;
+	font-size: 40px;
+}
+
+.scores {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 20vh;
+}
+
+.e,
+.a,
+.diff,
+.cjp {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.big_title {
+	color: #fff;
+	font-size: 40px;
+}
+
+.score_title {
+	color: #F26430;
+	font-size: 40px;
+	padding: 10%;
+}
+
+.total_score {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 20vh;
+}
+
+.total {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 0 8%;
+	padding: 3%;
+}
+
+.pass_title {
+	color: #fff;
+	font-size: 40px;
+}
+ 
+.pass_score {
+	color: #F26430;
+	font-size: 45px;
+	padding: 10%;
+}
+
+.place {
+	background-color: #F26430;
+	height: 10vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.place h1 {
+	color: #fff;
+	font-size: 45px;
+}
+/*
+
+#rate {
+	display: none;
+}
+*/
+
+.rating {
+	z-index: 10;
+}
