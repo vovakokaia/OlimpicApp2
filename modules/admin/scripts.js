@@ -718,7 +718,11 @@ let check_one = () => {
 
 $(document).ready(function() {
 	load_data = () => {
-		get_ajax({'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/admin/ajax/admin_data.php','#admin_data','POST', 1);	
+		get_ajax({  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},
+					'/modules/admin/ajax/admin_data.php',
+					'#admin_data',
+					'POST',
+					 1);	
 		
 		let count = 0;
 		
@@ -742,7 +746,6 @@ $(document).ready(function() {
 	
 	my_interval = setInterval(load_data, 1000);
 }); 
-
 
 $(window).on('load', () => {
 	
@@ -884,7 +887,7 @@ $(window).on('load', () => {
 			$('#start_from_id').on('click', start_from_id);
 
 			$('#startFrom').off();
-			$('#startFrom').on('click', function(){//		console.log('hi');
+			$('#startFrom').on('click', function(){
 		if($('.sidebar').width() > 0) {
 			$('.sidebar').css('width', '0');
 			$('.start_functions').removeClass('slideUp');
