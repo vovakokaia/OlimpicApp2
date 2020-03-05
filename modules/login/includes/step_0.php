@@ -1,6 +1,6 @@
-<link rel="stylesheet" href="/styles/basic.css">
-<link rel="stylesheet" href="/modules/login/styles.css">
-<script type="text/javascript" src="/modules/login/scripts.js"></script>
+<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
+<link rel="stylesheet" href="/Acrochamp/modules/login/styles.css">
+<script type="text/javascript" src="/Acrochamp/modules/login/scripts.js"></script>
 
 <style>
 	#pause {
@@ -10,7 +10,7 @@
 
 <div class="login_wrapper">
 	<div class="logo_div">
-		<img src="/images/logo1.jfif" alt="">
+		<img src="/Acrochamp/images/logo1.jfif" alt="">
 		<h3>The First International Tournament in Acrobatic Gymnastics “GURGENIDZE ACRO CUP” 10-14 August 2019 Tbilisi. Georgia</h3>
 	</div>
   

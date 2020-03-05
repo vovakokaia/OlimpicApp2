@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/includes/basic/defines.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/classes/mysql/mysql.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/defines.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
 
 $sportsmens = mysql :: select('sportsmens',
 							 "id != 0",

@@ -7,8 +7,8 @@ if(isset($_SESSION['judge'])) {
 									 "id = '".CURRENT_SPORTSMEN."'");
 ?>
 
-<script type="text/javascript" src="/scripts/swal.js" defer></script>
-<script type="text/javascript" src="/modules/casual_judge/scripts.js" defer></script>
+<script type="text/javascript" src="/Acrochamp/scripts/swal.js" defer></script>
+<script type="text/javascript" src="/Acrochamp/modules/casual_judge/scripts.js" defer></script>
 <link rel="stylesheet" href="/styles/basic.css">
 <!--<link rel="stylesheet" href="/modules/casual_judge/styles.css">-->
 
