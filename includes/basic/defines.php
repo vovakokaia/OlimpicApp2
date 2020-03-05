@@ -4,4 +4,5 @@
 @define('PASSWORD', '');
 @define('DB_TABLE', 'onavt_25130514_acrochampionship');
 
-//vlad privet  dsafdsa
+//vlad privet
+//david *****

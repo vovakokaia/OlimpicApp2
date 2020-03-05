@@ -8,7 +8,7 @@ if(isset($_POST['login_url'])) {
 	$require_url = 'modules/login/basic.php';
 	
 	if(isset($_POST['login_submit'])) {
-		$require_url = 'modules/login/includes/step_1.php';
+		$require_url = 'modules/login/includes/step_1.php'; 
 	}
 }
 

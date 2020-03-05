@@ -3,7 +3,7 @@
 }
 
 .bg {
-	background: url(/images/bg.jpg);
+	background: url('/Acrochamp/images/bg.jpg');
 	width: 100%;
 	height: 100%;
 	padding-bottom: 1000px;

@@ -10,8 +10,8 @@ require_once 'require.php';
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
-		<script src="/includes/bootstrap-sweetalert-master/dist/sweetalert.js" defer></script>
-		<link rel="stylesheet" href="styles/basic.css">
+		<script src="/Acrochamp/includes/bootstrap-sweetalert-master/dist/sweetalert.js" defer></script>
+		<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
 		<script src="scripts/basic.js"></script>
 <?php
 		require_once 'includes/view/nav.php'; 

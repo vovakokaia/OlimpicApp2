@@ -4,7 +4,7 @@
 }
 
 body {
-    background: url(/images/bg.jpg);
+    background: url('/Acrochamp/images/bg.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
