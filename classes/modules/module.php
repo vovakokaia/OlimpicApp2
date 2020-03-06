@@ -4,7 +4,7 @@ class module
 	public static function set_module($name,$dir = '',$uploads = 1,$styles = 1,$scripts = 1,$steps = 3,$steps_scripts = 1, $steps_styles = 1,$widget = 1,$form = 0,$post_name = 'submit') {
 		if($name) {
 			if(!$dir) {
-				$dir = $_SERVER['DOCUMENT_ROOT'].'/work/beejee/modules';
+				$dir = $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/modules';
 			}
 
 			if(is_dir($dir)) {

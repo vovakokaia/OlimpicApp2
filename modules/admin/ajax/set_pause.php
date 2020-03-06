@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/includes/basic/defines.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/classes/mysql/mysql.php';
-//require_once $_SERVER['DOCUMENT_ROOT'].'/includes/basic/current_sportsmen.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/defines.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
+//require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/current_sportsmen.php';
 if(!$_POST['datas']['all']) {
 	if($_POST['datas']['PAUSE'] != 0) {
 		

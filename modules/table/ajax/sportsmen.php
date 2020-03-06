@@ -1,6 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/includes/basic/defines.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/classes/mysql/mysql.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/defines.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
 $sportmsen = mysql :: select_one('sportsmens',
 							 	 "id = '".$_POST['datas']['CURRENT_SPORTSMEN']."'");
 //var_dump($sportmsen);
@@ -40,7 +40,7 @@ $sportmsen = mysql :: select_one('sportsmens',
 	<div class="scores_div">
 
 		<div class="country">
-			<img src="countries/<?= $sportmsen['country'] ?>.jpg" alt="<?= $sportmsen['country'] ?>">
+			<img src="/Acrochamp/countries/<?= $sportmsen['country'] ?>.jpg" alt="<?= $sportmsen['country'] ?>">
 			<h1 class="page_title"><?= $sportmsen['country'] ?></h1>
 		</div>
 

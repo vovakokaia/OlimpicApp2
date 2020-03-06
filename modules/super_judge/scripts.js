@@ -326,7 +326,7 @@ let submit_form = (e) => {
 		
 		$('.swal-button--confirm').on('click', function() {
 			
-			get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
+			get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
 			
 			$('#pause').fadeIn();
 			a_arr = [];
@@ -386,7 +386,7 @@ $(window).on('load',() => {
 
 $(document).ready(function() {
 	setInterval(function() {
-		get_ajax({'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/column_value.php','#table','POST');
+		get_ajax({'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/column_value.php','#table','POST');
 	},1000);
 	
 	setInterval(function() {
@@ -404,7 +404,7 @@ $(document).ready(function() {
 		  'DIFFICULTY' : query_object.Difficulty,
 		  'PENALTY' : query_object.Penalty,
 		  'TOTAL' : query_object.TOTAL,
-		  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/ajax_main_judge.php','#low_juries','POST');
+		  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/ajax_main_judge.php','#low_juries','POST');
 		//console.log(query_object);
 	},1000);
 	
@@ -425,7 +425,7 @@ $(document).ready(function() {
 				  'DIFFICULTY' : query_object.Difficulty,
 				  'PENALTY' : query_object.Penalty,
 				  'TOTAL' : query_object.TOTAL,
-				  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/ajax_scores_insert.php','#ajax_load_div','POST');
+				  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/ajax_scores_insert.php','#ajax_load_div','POST');
 					setTimeout(function(){
 						console.log(query_object);
 					},1000);

@@ -1,12 +1,12 @@
 <script src="https://maxcdn.bootsdivapcdn.com/bootsdivap/3.4.0/js/bootsdivap.min.js"></script>
 <link rel="stylesheet" href="https://maxcdn.bootsdivapcdn.com/bootsdivap/3.4.0/css/bootsdivap.min.css">
 
-<script type="text/javascript" src="/scripts/swal.js" defer></script>
+<script type="text/javascript" src="/Acrochamp//scripts/swal.js" defer></script>
 
 <link rel="stylesheet" href="/Acrochamp/styles/basic.css">
 <link rel="stylesheet" href="/Acrochamp/modules/admin/styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/modules/admin/scripts.js"></script>
+<script src="/Acrochamp/modules/admin/scripts.js"></script>
 
 <style>
 #pause {
@@ -97,19 +97,19 @@
 		<div class="tables col_padding">
 			<div class="tab_table">
 				<div class="folder_icon col_padding">
-					<img src="/images/list.png" alt="list icon">
+					<img src="/Acrochamp//images/list.png" alt="list icon">
 				</div>
 				<h4 class="col_padding">Table</h4>
 			</div>
 			<div class="tab_table">
 				<div class="folder_icon col_padding">
-					<img src="/images/list.png" alt="list icon">
+					<img src="/Acrochamp//images/list.png" alt="list icon">
 				</div>
 				<h4 class="col_padding">Table</h4>
 			</div>
 			<div class="tab_table">
 				<div class="folder_icon col_padding">
-					<img src="/images/list.png" alt="list icon">
+					<img src="/Acrochamp//images/list.png" alt="list icon">
 				</div>
 				<h4 class="col_padding">Table</h4>
 			</div>
@@ -156,9 +156,9 @@
 	
 	<div class="table_block" id="DivToPrint">
 		<div class="header">
-			<img src="/images/logo1.jfif" alt="">
+			<img src="/Acrochamp//images/logo1.jfif" alt="">
 			<p>The First International Tournament in Acrobatic Gymnastics “GURGENIDZE ACRO CUP” 10-14 August 2019 Tbilisi.   Georgia</p>
-			<img src="/images/logo2.jfif" alt="">
+			<img src="/Acrochamp//images/logo2.jfif" alt="">
 		</div>
 		<hr>
 		<h1>TABLE 1</h1>

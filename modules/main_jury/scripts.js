@@ -299,7 +299,7 @@ $(document).ready(function() {
 		  'DIFFICULTY' : query_object.Difficulty,
 		  'PENALTY' : query_object.Penalty,
 		  'TOTAL' : query_object.TOTAL,
-		  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/ajax_score_insert.php','#low_juries','POST');
+		  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/ajax_score_insert.php','#low_juries','POST');
 		console.log(query_object);
 	},2000);
 	
@@ -320,7 +320,7 @@ $(document).ready(function() {
 				  'DIFFICULTY' : query_object.Difficulty,
 				  'PENALTY' : query_object.Penalty,
 				  'TOTAL' : query_object.TOTAL,
-				  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/ajax_scores_insert.php','#ajax_load_div','POST');
+				  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/ajax_scores_insert.php','#ajax_load_div','POST');
 				console.log(query_object);
 			},20);
 	});

@@ -55,13 +55,13 @@ if(!empty(PAGE_URL)) {
 	
 	if(file_exists('modules/'.$module.'/styles/'.$module.'.css')) {
 ?>
-		<link rel="stylesheet" href="modules/<?= $module?>/styles/<?= $module?>.css">
+		<link rel="stylesheet" href="/Acrochamp/modules/<?= $module?>/styles/<?= $module?>.css">
 <?php
 	}
 	
 	if(file_exists('modules/'.$module.'/scripts/'.$module.'.js')) {
 ?>
-		<script type="text/javascript" src="modules/<?= $module?>/scripts/<?= $module?>.js" async></script>
+		<script type="text/javascript" src="/Acrochamp/modules/<?= $module?>/scripts/<?= $module?>.js" async></script>
 <?php
 	}
 }

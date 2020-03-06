@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/includes/basic/defines.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/classes/mysql/mysql.php';
-//require_once $_SERVER['DOCUMENT_ROOT'].'/includes/basic/current_sportsmen.php'; 
+require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/defines.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
+//require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/current_sportsmen.php'; 
 //mysql :: connect();
 
 $select = mysql :: select_one('sportsmens',
@@ -38,10 +38,10 @@ for($b = 1; $b <= 8; $b++) {
 ?>
 <script>
 	$('.return').on('click', function() {
-		get_ajax({'judge_id' : $(this).data('judge_id'),'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/ajax_return.php','#ajax_load_div','POST', 0);
+		get_ajax({'judge_id' : $(this).data('judge_id'),'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/ajax_return.php','#ajax_load_div','POST', 0);
 	});
 	
 	$('.return').on('click', function() {
-		get_ajax({'PAUSE' : 0,'JUDGE_ID' : $(this).data('judge_id'),'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/admin/ajax/set_pause.php','#ajax_load_div','POST', 0);
+		get_ajax({'PAUSE' : 0,'JUDGE_ID' : $(this).data('judge_id'),'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/admin/ajax/set_pause.php','#ajax_load_div','POST', 0);
 	});
 </script>

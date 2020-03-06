@@ -9,8 +9,8 @@ if(isset($_SESSION['judge'])) {
 
 <script type="text/javascript" src="/Acrochamp/scripts/swal.js" defer></script>
 <script type="text/javascript" src="/Acrochamp/modules/casual_judge/scripts.js" defer></script>
-<link rel="stylesheet" href="/styles/basic.css">
-<!--<link rel="stylesheet" href="/modules/casual_judge/styles.css">-->
+<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
+<!--<link rel="stylesheet" href="/Acrochamp/modules/casual_judge/styles.css">-->
 
 <div class="before_pause"></div>
 <div class="low_level_jury">

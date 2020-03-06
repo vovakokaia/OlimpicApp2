@@ -6,13 +6,13 @@ require_once 'require.php';
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/all.css">
-		<link rel="shortcut icon" type="image/png" href="/images/logo.png"/>
+		<link rel="shortcut icon" type="image/png" href="/Acrochamp/images/logo.png"/>
 
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" defer></script>
 		<script src="/Acrochamp/includes/bootstrap-sweetalert-master/dist/sweetalert.js" defer></script>
 		<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
-		<script src="scripts/basic.js"></script>
+		<script src="/Acrochamp/scripts/basic.js"></script>
 <?php
 		require_once 'includes/view/nav.php'; 
 		require_once 'page_url.php'; 	

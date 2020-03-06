@@ -87,7 +87,7 @@ let pad_click = () => {
 			current_sportsmen_id = $('#current_sportsmen').html();
 			return_interval = setInterval(function() {
 				current_sportsmen_id = $('#current_sportsmen').html();
-				get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id },'/modules/casual_judge/ajax/check_return.php','#calc_value','POST', 1);
+				get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id },'/Acrochamp/modules/casual_judge/ajax/check_return.php','#calc_value','POST', 1);
 			}, 1000);
 		} else {
 			clearInterval(return_interval);
@@ -138,14 +138,14 @@ $(document).ready(function() {
 	
 	setInterval(function() {
 		current_sportsmen_id = $('#current_sportsmen').html();
-		get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id },'/modules/casual_judge/ajax/ajax_on_ready.php','#ajax_on_ready','POST', 1);
+		get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id },'/Acrochamp/modules/casual_judge/ajax/ajax_on_ready.php','#ajax_on_ready','POST', 1);
 	},1200);
 	
 	if(check_return_val) {
 		current_sportsmen_id = $('#current_sportsmen').html();
 		return_interval = setInterval(function() {
 			current_sportsmen_id = $('#current_sportsmen').html();
-			get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id },'/modules/casual_judge/ajax/check_return.php','#calc_value','POST', 1);
+			get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id },'/Acrochamp/modules/casual_judge/ajax/check_return.php','#calc_value','POST', 1);
 		}, 1000);
 		interval_state = true;
 	} else {
@@ -172,7 +172,7 @@ $(document).ready(function() {
 
 
 	$('#enter').on('click', function() {
-		get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id},'/modules/casual_judge/ajax/ajax_casual_judge.php','#ajax_load_div_casual','POST');
+		get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id},'/Acrochamp/modules/casual_judge/ajax/ajax_casual_judge.php','#ajax_load_div_casual','POST');
 		$('#calc_value').html('0.0');
 		ca_calc_start_1 = true;
 		swal({
@@ -185,7 +185,7 @@ $(document).ready(function() {
 		})
 		.then(function() {
 			JUDGE_ID = $('#judge_id').val();
-			get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'JUDGE_ID': JUDGE_ID},'/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
+			get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'JUDGE_ID': JUDGE_ID},'/Acrochamp/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
 			setInterval(return_interval, 1000);
 			$('.before_pause').fadeIn(800);
 			setTimeout(function() {
@@ -199,7 +199,7 @@ $(document).ready(function() {
 			current_sportsmen_id = $('#current_sportsmen').html();
 			return_interval = setInterval(function() {
 				current_sportsmen_id = $('#current_sportsmen').html();
-				get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id },'/modules/casual_judge/ajax/check_return.php','#calc_value','POST', 1);
+				get_ajax({'VALUE' : val, 'JUDGE_ID' : JUDGE_ID, 'CURRENT_SPORTSMEN' : current_sportsmen_id },'/Acrochamp/modules/casual_judge/ajax/check_return.php','#calc_value','POST', 1);
 			}, 1000);
 			
 		} else {

@@ -63,17 +63,14 @@ if(isset($_POST['name']) && isset($_POST['password'])) {
 	}
 } 
 
-?>
-<h1>$refresh_url -> <?= $refresh_url ?></h1>
-<?php
 if(file_exists($refresh_url)) {
 	$result = 1;
 ?>
-<!--	<script src="/modules/casual_judge/scripts.js" defer></script>-->
-	<script src="/scripts/basic.js" defer></script>
-	<link rel="stylesheet" href="/styles/basic.css">
-	<link rel="stylesheet" href="/modules/casual_judge/styles.css">
-	<link rel="stylesheet" href="/includes/bootstrap-sweetalert-master/dist/sweetalert.css">
+<!--	<script src="/Acrochamp/modules/casual_judge/scripts.js" defer></script>-->
+	<script src="/Acrochamp/scripts/basic.js" defer></script>
+	<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
+	<link rel="stylesheet" href="/Acrochamp/modules/casual_judge/styles.css">
+	<link rel="stylesheet" href="/Acrochamp/includes/bootstrap-sweetalert-master/dist/sweetalert.css">
 <?php
 	require($refresh_url);
 } else {

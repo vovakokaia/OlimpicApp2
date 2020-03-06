@@ -42,7 +42,7 @@ let cas_score_1_1,
 
 let start_from_id = () => {
 	if(paused) {		
-		get_ajax({'ADMIN_START_FROM' : $('#start_id').val()},'/includes/basic/current_sportsmen.php','#admin_data','POST', 0);
+		get_ajax({'ADMIN_START_FROM' : $('#start_id').val()},'/Acrochamp/includes/basic/current_sportsmen.php','#admin_data','POST', 0);
 		let available = false;
 		let entered_id = $('#start_id').val();
 		for(let row of $('.tr')){
@@ -719,7 +719,7 @@ let check_one = () => {
 $(document).ready(function() {
 	load_data = () => {
 		get_ajax({  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},
-					'/modules/admin/ajax/admin_data.php',
+					'/Acrochamp/modules/admin/ajax/admin_data.php',
 					'#admin_data',
 					'POST',
 					 1);	
@@ -756,13 +756,13 @@ $(window).on('load', () => {
 	check_one();
 		
 	$('#save').on('click', () => {
-		get_ajax({'full_data' : get_full_data()},'/modules/admin/ajax/save_data.php','#admin_data','POST', 0);	
+		get_ajax({'full_data' : get_full_data()},'/Acrochamp/modules/admin/ajax/save_data.php','#admin_data','POST', 0);	
 	});
 	
 	$('#start').on('click', function() {
 		if(paused) {
 			$('.admin_pause_block').fadeIn();
-			get_ajax({'PAUSE' : 0, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'JUDGE_ID' : $('#judge_id').val(), 'all' : true},'/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
+			get_ajax({'PAUSE' : 0, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'JUDGE_ID' : $('#judge_id').val(), 'all' : true},'/Acrochamp/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
 			my_interval = setInterval(load_data, 1000);
 			$('.admin_overlay').fadeIn();
 			paused = false;
@@ -808,7 +808,7 @@ $(window).on('load', () => {
 			}
 			
 			paused = true;
-			get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'all' : true},'/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
+			get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'all' : true},'/Acrochamp/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
 			clearInterval(my_interval);
 			$('label').off();
 

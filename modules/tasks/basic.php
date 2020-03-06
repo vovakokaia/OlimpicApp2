@@ -28,7 +28,7 @@ $done_class = '';
 $prop = '';
 if($tasks) {
 ?>
-<link rel="stylesheet" href="/work/beejee/admin/includes/edit/styles/edit.css">
+<link rel="stylesheet" href="/Acrochamp/work/beejee/admin/includes/edit/styles/edit.css">
 <div class="container">
 	<?= bsw :: set_bsw('sort_by', 'Sort By')?>
 		<a href="?sort=name_d"><option><?= bsw :: get_bsw('name_a_z')?></option></a>

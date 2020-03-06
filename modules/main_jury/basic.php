@@ -1,5 +1,5 @@
-<link rel="stylesheet" href="/styles/basic.css">
-<link rel="stylesheet" href="/modules/main_jury/styles.css">
+<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
+<link rel="stylesheet" href="/Acrochamp/modules/main_jury/styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="/Acrochamp/modules/main_jury/scripts.js"></script>
 <script src="/Acrochamp/scripts/basic.js"></script> 
