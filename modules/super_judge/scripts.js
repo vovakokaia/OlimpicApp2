@@ -48,45 +48,32 @@ let a_arr = new Array();
 let e_arr = new Array();
 let red = (a,b) => a + b;
 
+//FORMULA
+
 let formula_1 = (arr) => (arr.reduce(red,0) - (Math.max(...arr) + Math.min(...arr))) / 2;
 let formula_2 = (arr) => (arr.reduce(red,0) - (Math.max(...arr) + Math.min(...arr)));
 
 let calculate_scores = () => {
-	//CALCULATION with formula
 	let a = $('.a span');
 	for(let x  of a) {
 		a_arr.push(+x.innerHTML);
 	}
-	
-	// say(a_arr);
 	
 	let e = $('.e span');
 	for(let x of e) {
 		e_arr.push(+x.innerHTML);
 	}
 	
-	// say(e_arr);
-	
 	A =  +formula_1(a_arr);
 	
-	// say(A);
-//	console.log(A)
 	E = +formula_2(e_arr);
-//	console.log(E);
-	
-	// say(E);
-	
+
 	setTimeout(() => {
 		PENALTY = +$('#penalty').val();
 		DIFFICULTY = +$('#diff').val();
 		
-	   	// say(PENALTY);
-	   	// say(DIFFICULTY);
-		
 		let result = A + E + DIFFICULTY - PENALTY;
-		
-		// say(result);
-		
+
 		A = E = DIFFICULTY = PENALTY = 0;
 		a_arr = [];
 		e_arr = [];
@@ -255,26 +242,35 @@ let s_pad_click = () => {
 	});
 }
 	
+let validationText = "";
+
 let validation = () => {
 	let counter = 0;
 	let valid = false;
+
+	if($('#diff').val() == 0 || $('#penalty').val() == 0) {
+		validationText = "Your inputs are empty";
+		return false;
+	}
 	
 	let a_s = $('.a span');
 	let e_s = $('.e span');
 	for(let az of a_s) {
-		if(+$(az).html() != 0){
+		if($(az).html() !== '0'){
 			counter++;
 		}
 	}
 	
 	for(let ez of e_s) {
-		if(+$(ez).html() != 0){
+		if($(ez).html() !== '0'){
 			counter++;
 		}
 	}
 	
 	if(counter == 8){
 		valid = true;
+	} else {
+		validationText = "Wait for all, please";
 	}
 	
 	counter = 0;
@@ -311,7 +307,6 @@ let submit_form = (e) => {
 			"Difficulty" :  +$('#diff').val(), 
 			"Penalty": +$('#penalty').val(),
 			"TOTAL" : +$('#total').html()
-
 		};	 	
 		
 		swal({
@@ -326,7 +321,12 @@ let submit_form = (e) => {
 		
 		$('.swal-button--confirm').on('click', function() {
 			
-			get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
+			get_ajax({'PAUSE' : 1, 
+					  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(),
+					  'all': 1,},
+					  '/modules/admin/ajax/set_pause.php',
+					  '#calc_value','POST',
+					   0);
 			
 			$('#pause').fadeIn();
 			a_arr = [];
@@ -342,7 +342,7 @@ let submit_form = (e) => {
 	} else {
 		swal({
 		  title: "Fail!",
-		  text: "Wait for all, BITCH!!!",
+		  text: validationText,
 		  showCancelButton: true,
 		  confirmButtonClass: "btn-error",
 		  confirmButtonText: "ok!",
@@ -357,10 +357,6 @@ let return_score = () => {
 	$('.return').on('click', (e) => {
 		let r_id = $(e.target).data("id");
 		juries.set(r_id, false);
-		//request//
-		//request//
-		//request//
-		//request//
 	});
 }
 
@@ -373,20 +369,17 @@ let s_check_length = () => {
 	});
 };
 
-
-
 $(window).on('load',() => {
 	s_check_length();
 	prevent_letters();
 	s_pad_click();
 	return_score();
-	$('#submit').on('click',submit_form);
 
 });
 
 $(document).ready(function() {
 	setInterval(function() {
-		get_ajax({'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/column_value.php','#table','POST');
+		get_ajax({'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/column_value.php','#table','POST');
 	},1000);
 	
 	setInterval(function() {
@@ -404,11 +397,11 @@ $(document).ready(function() {
 		  'DIFFICULTY' : query_object.Difficulty,
 		  'PENALTY' : query_object.Penalty,
 		  'TOTAL' : query_object.TOTAL,
-		  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/ajax_main_judge.php','#low_juries','POST');
+		  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/ajax_main_judge.php','#low_juries','POST');
 		//console.log(query_object);
 	},1000);
 	
-	$('#submit').on('click', function() {
+	$('#submit').on('click', function(e) {
 		setTimeout(function() {
 			// console.log(query_object.TOTAL);
 			get_ajax({'ID' : query_object.ID,
@@ -425,10 +418,16 @@ $(document).ready(function() {
 				  'DIFFICULTY' : query_object.Difficulty,
 				  'PENALTY' : query_object.Penalty,
 				  'TOTAL' : query_object.TOTAL,
-				  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/Acrochamp/modules/main_jury/ajax/ajax_scores_insert.php','#ajax_load_div','POST');
+				  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},
+				  '/modules/main_jury/ajax/ajax_scores_insert.php',
+				  '#ajax_load_div',
+				  'POST');
 					setTimeout(function(){
 						console.log(query_object);
 					},1000);
 			},20);
+			
+			submit_form(e);
+			debugger;
 	});
 });

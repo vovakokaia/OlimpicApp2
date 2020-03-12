@@ -42,7 +42,7 @@ let cas_score_1_1,
 
 let start_from_id = () => {
 	if(paused) {		
-		get_ajax({'ADMIN_START_FROM' : $('#start_id').val()},'/Acrochamp/includes/basic/current_sportsmen.php','#admin_data','POST', 0);
+		get_ajax({'ADMIN_START_FROM' : $('#start_id').val()},'/includes/basic/current_sportsmen.php','#admin_data','POST', 0);
 		let available = false;
 		let entered_id = $('#start_id').val();
 		for(let row of $('.tr')){
@@ -686,6 +686,8 @@ let unset_filter  = () => {
 	sort_by_id();
 }
 
+let my_interval,load_data;
+
 let start_from = () => {
 	if(paused) {
 		let start_id = $('#start_id').val();  
@@ -702,7 +704,6 @@ let start_from = () => {
 	}
 }
 
-let my_interval,load_data;
 
 let check_one = () => {
 	$('.tr label').off();
@@ -719,7 +720,7 @@ let check_one = () => {
 $(document).ready(function() {
 	load_data = () => {
 		get_ajax({  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},
-					'/Acrochamp/modules/admin/ajax/admin_data.php',
+					'/modules/admin/ajax/admin_data.php',
 					'#admin_data',
 					'POST',
 					 1);	
@@ -756,13 +757,13 @@ $(window).on('load', () => {
 	check_one();
 		
 	$('#save').on('click', () => {
-		get_ajax({'full_data' : get_full_data()},'/Acrochamp/modules/admin/ajax/save_data.php','#admin_data','POST', 0);	
+		get_ajax({'full_data' : get_full_data()},'/modules/admin/ajax/save_data.php','#admin_data','POST', 0);	
 	});
 	
 	$('#start').on('click', function() {
 		if(paused) {
 			$('.admin_pause_block').fadeIn();
-			get_ajax({'PAUSE' : 0, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'JUDGE_ID' : $('#judge_id').val(), 'all' : true},'/Acrochamp/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
+			get_ajax({'PAUSE' : 0, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'JUDGE_ID' : $('#judge_id').val(), 'all' : true},'/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
 			my_interval = setInterval(load_data, 1000);
 			$('.admin_overlay').fadeIn();
 			paused = false;
@@ -784,126 +785,130 @@ $(window).on('load', () => {
 
 	
 	$('#admin_pause').on('click', function() {
-		$('.admin_pause_block').fadeOut();
-		
-		if(!paused) {
-			let count = 0;
-			let entered_id = $('#start_id').val();
-			for(let row of $('.tr')){
-				for(let column of $(row).find('.td')){
-					console.log("IM in");
-					if($(column).data('value') == 'id' && $(column).html() == entered_id){
-						$('.tr').css('background-color', '');
-						$(row).css('background-color', 'rgba(254, 241, 96, 0.6)');
-						available = true;
-						break;
+		get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'all' : true},'/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
+		clearInterval(my_interval);
+
+
+		setTimeout(() => {
+			$('.admin_pause_block').fadeOut();	
+			if(!paused) {
+				let count = 0;
+				let entered_id = $('#start_id').val();
+				for(let row of $('.tr')){
+					for(let column of $(row).find('.td')){
+						console.log("IM in");
+						if($(column).data('value') == 'id' && $(column).html() == entered_id){
+							$('.tr').css('background-color', '');
+							$(row).css('background-color', 'rgba(254, 241, 96, 0.6)');
+							available = true;
+							break;
+						}
+						
+						if(count == 5){ 
+							count = 0;
+							break;
+						}
+						count++;
 					}
-					
-					if(count == 5){ 
-						count = 0;
-						break;
-					}
-					count++;
 				}
+				
+				paused = true;
+				$('label').off();
+
+				$('label').on('click', (e)=> {
+					$(e.target).find('.before').fadeToggle();
+				});
+
+				$('.admin_overlay').fadeOut();
+
+				delete_row();
+				mark_all();
+				print();
+				
+				$('#add').off();
+				$('#add').on('click', function() {
+					if($('.sidebar').width() > 0) {
+						$('.sidebar').css('width', '0');
+						$('.add_options').removeClass('slideUp');
+						setTimeout(function() {
+							$('.add_options').css('display', 'none');
+						}, 300);
+
+					} else {
+						$('.add_options').css('display', 'block');
+						setTimeout(function() {
+							$('.sidebar').css('width', '300px');
+							$('.add_options').addClass('slideUp');
+						}, 10);
+					}
+				});
+
+				$('#unset_filter').off();
+				$('#unset_filter').on('click', unset_filter);
+
+				$('#sort').off();
+				$('#sort').on('click',sort_by_rank);
+
+				$('sortID').off();
+				$('#sortID').on('click', sort_by_id);
+
+				$('.td').off();
+				$('.td').on('keypress',function(e){
+					let current = $(e.target).data('value');
+					if(current == 'Diff' || current == 'A' || current == 'E' || current == 'P' || current == 'Score' || current == 'Total') {
+						if($(e.target).html().indexOf('.') == -1) {
+							dot_used = false;
+						}
+						if(!isNumber(e)) {
+							return false;
+						}
+					}	
+				});
+
+				$('#filter').off();
+				$('#filter').on('click', function() {
+					if($('.sidebar').width() > 0) {
+						$('.sidebar').css('width', '0');
+						$('.filter_options').removeClass('slideUp');
+						setTimeout(function() {
+							$('.filter_options').css('display', 'none');
+						}, 300);
+
+					} else {
+						$('.filter_options').css('display', 'block');
+						setTimeout(function() {
+							$('.sidebar').css('width', '300px');
+							$('.filter_options').addClass('slideUp');
+						}, 10);
+					}
+				});
+
+				$('#add_submit').off();
+				$('#add_submit').on('click', addRow);
+
+				$('#start_from_id').off();
+				$('#start_from_id').on('click', start_from_id);
+
+				$('#startFrom').off();
+				$('#startFrom').on('click', function(){
+			if($('.sidebar').width() > 0) {
+				$('.sidebar').css('width', '0');
+				$('.start_functions').removeClass('slideUp');
+				setTimeout(function() {
+					$('.start_functions').css('display', 'none');
+				}, 300);
+
+			} else {
+				$('.start_functions').css('display', 'block');
+				setTimeout(function() {
+					$('.sidebar').css('width', '300px');
+					$('.start_functions').addClass('slideUp');
+				}, 10);
 			}
-			
-			paused = true;
-			get_ajax({'PAUSE' : 1, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'all' : true},'/Acrochamp/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
-			clearInterval(my_interval);
-			$('label').off();
+		});
+			}
+		}, 1000);
 
-			$('label').on('click', (e)=> {
-				$(e.target).find('.before').fadeToggle();
-			});
-
-			$('.admin_overlay').fadeOut();
-
-			delete_row();
-			mark_all();
-			print();
-			
-			$('#add').off();
-			$('#add').on('click', function() {
-				if($('.sidebar').width() > 0) {
-					$('.sidebar').css('width', '0');
-					$('.add_options').removeClass('slideUp');
-					setTimeout(function() {
-						$('.add_options').css('display', 'none');
-					}, 300);
-
-				} else {
-					$('.add_options').css('display', 'block');
-					setTimeout(function() {
-						$('.sidebar').css('width', '300px');
-						$('.add_options').addClass('slideUp');
-					}, 10);
-				}
-			});
-
-			$('#unset_filter').off();
-			$('#unset_filter').on('click', unset_filter);
-
-			$('#sort').off();
-			$('#sort').on('click',sort_by_rank);
-
-			$('sortID').off();
-			$('#sortID').on('click', sort_by_id);
-
-			$('.td').off();
-			$('.td').on('keypress',function(e){
-				let current = $(e.target).data('value');
-				if(current == 'Diff' || current == 'A' || current == 'E' || current == 'P' || current == 'Score' || current == 'Total') {
-					if($(e.target).html().indexOf('.') == -1) {
-						dot_used = false;
-					}
-					if(!isNumber(e)) {
-						return false;
-					}
-				}	
-			});
-
-			$('#filter').off();
-			$('#filter').on('click', function() {
-				if($('.sidebar').width() > 0) {
-					$('.sidebar').css('width', '0');
-					$('.filter_options').removeClass('slideUp');
-					setTimeout(function() {
-						$('.filter_options').css('display', 'none');
-					}, 300);
-
-				} else {
-					$('.filter_options').css('display', 'block');
-					setTimeout(function() {
-						$('.sidebar').css('width', '300px');
-						$('.filter_options').addClass('slideUp');
-					}, 10);
-				}
-			});
-
-			$('#add_submit').off();
-			$('#add_submit').on('click', addRow);
-
-			$('#start_from_id').off();
-			$('#start_from_id').on('click', start_from_id);
-
-			$('#startFrom').off();
-			$('#startFrom').on('click', function(){
-		if($('.sidebar').width() > 0) {
-			$('.sidebar').css('width', '0');
-			$('.start_functions').removeClass('slideUp');
-			setTimeout(function() {
-				$('.start_functions').css('display', 'none');
-			}, 300);
-
-		} else {
-			$('.start_functions').css('display', 'block');
-			setTimeout(function() {
-				$('.sidebar').css('width', '300px');
-				$('.start_functions').addClass('slideUp');
-			}, 10);
-		}
-	});
-		}
 	});
 		
  }, 10);
