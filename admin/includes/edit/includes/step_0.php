@@ -21,7 +21,7 @@ if(isset($_GET['hash'])
     $result_code = 1;
     $refresh_url = '?res='.$result_code;
     ?>
-    <link rel="stylesheet" href="/Acrochamp/work/beejee/admin/includes/edit/styles/edit.css">
+    <link rel="stylesheet" href="<?= ACROCHAMP ?>/work/beejee/admin/includes/edit/styles/edit.css">
     <div class="container">
        <form action="" method="post">
           <h2><?= bsw :: get_bsw('edit_task')?></h2>

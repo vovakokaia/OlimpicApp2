@@ -1,7 +1,7 @@
 <?php
 if(!empty($_POST['datas']['CURRENT_SPORTSMEN']) && !empty($_POST['datas']['JUDGE_ID'])) {
-	require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/defines.php';
-	require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
+	require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/includes/basic/defines.php';
+	require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/classes/mysql/mysql.php';
 
 	$pause = mysql :: select_one('sportsmens',
 								"id = '".$_POST['datas']['CURRENT_SPORTSMEN']."'");
@@ -30,7 +30,7 @@ if(!empty($_POST['datas']['CURRENT_SPORTSMEN']) && !empty($_POST['datas']['JUDGE
 			<div class="circle_mini"></div>
 			<div class="circle_low"></div>
 
-			<img src="/Acrochamp//images/logo1.jfif" alt="">
+			<img src="<?= ACROCHAMP ?>//images/logo1.jfif" alt="">
 		</div>
 	<?php
 	}

@@ -2,14 +2,14 @@
 if(!empty($_SESSION['super_judge'])) {
 ?>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
-<link rel="stylesheet" href="/Acrochamp/modules/super_judge/styles.css">
-<script type="text/javascript" src="/Acrochamp/scripts/swal.js" defer></script>
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/styles/basic.css">
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/modules/super_judge/styles.css">
+<script type="text/javascript" src="<?= ACROCHAMP ?>/scripts/swal.js" defer></script>
 
 
 
-<script src="/Acrochamp/modules/super_judge/scripts.js"></script>
-<script src="/Acrochamp/scripts/basic.js"></script> 
+<script src="<?= ACROCHAMP ?>/modules/super_judge/scripts.js"></script>
+<script src="<?= ACROCHAMP ?>/scripts/basic.js"></script> 
 
 
 <div class="bg">

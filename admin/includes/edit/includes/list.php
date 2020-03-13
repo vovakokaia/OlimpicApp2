@@ -4,7 +4,7 @@ $done_class = '';
 $prop = '';
 if($tasks) {
 ?>
-<link rel="stylesheet" href="/Acrochamp/work/beejee/admin/includes/edit/styles/edit.css">
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/work/beejee/admin/includes/edit/styles/edit.css">
 <div class="container">
   <h2>Hover Rows</h2>
   <p>The .table-hover class enables a hover state on table rows:</p>            
