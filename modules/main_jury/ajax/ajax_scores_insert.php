@@ -1,7 +1,7 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/defines.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
-//require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/current_sportsmen.php';
+require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/includes/basic/defines.php';
+require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/classes/mysql/mysql.php';
+//require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/includes/basic/current_sportsmen.php';
 //mysql :: connect();
 if($_POST) {
 	if(isset($_POST['datas']['ID'])) {

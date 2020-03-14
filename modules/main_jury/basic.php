@@ -1,8 +1,8 @@
-<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
-<link rel="stylesheet" href="/Acrochamp/modules/main_jury/styles.css">
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/styles/basic.css">
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/modules/main_jury/styles.css">
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="/Acrochamp/modules/main_jury/scripts.js"></script>
-<script src="/Acrochamp/scripts/basic.js"></script> 
+<script src="<?= ACROCHAMP ?>/modules/main_jury/scripts.js"></script>
+<script src="<?= ACROCHAMP ?>/scripts/basic.js"></script> 
 
 <div class="bg">
 	<div class="content_div">

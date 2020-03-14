@@ -1,14 +1,14 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/defines.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
+require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/includes/basic/defines.php';
+require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/classes/mysql/mysql.php';
 ?>
-<link rel="stylesheet" href="/Acrochamp/modules/rating/owlcarousel/dist/assets/owl.carousel.min.css">
-<link rel="stylesheet" href="/Acrochamp/modules/rating/owlcarousel/dist/assets/owl.theme.default.min.css">
-<link rel="stylesheet" href="/Acrochamp/styles/basic.css"> 
-<link rel="stylesheet" href="/Acrochamp/modules/rating/styles.css">
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/modules/rating/owlcarousel/dist/assets/owl.carousel.min.css">
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/modules/rating/owlcarousel/dist/assets/owl.theme.default.min.css">
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/styles/basic.css"> 
+<link rel="stylesheet" href="<?= ACROCHAMP ?>/modules/rating/styles.css">
 <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script> -->
 
-<script src="/Acrochamp/modules/rating/scripts.js" defer></script>
+<script src="<?= ACROCHAMP ?>/modules/rating/scripts.js" defer></script>
 <?php
 	$sportmsen = mysql :: select('sportsmens',
 								 "id != 0",
@@ -20,9 +20,9 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
 
 <div class="rating">
 	<div class="rating_header content_div col_padding">
-		<img class="col_padding" src="/Acrochamp/images/logo1.jfif" alt="logo">
+		<img class="col_padding" src="<?= ACROCHAMP ?>/images/logo1.jfif" alt="logo">
 		<h1 class="col_padding" class="category_name_rating" data-category_name="<?= $sportmsen_in['sportsmen_category'] ?>"><?= $sportmsen_in['sportsmen_category'] ?></h1>
-		<img class="col_padding" src="/Acrochamp/images/logo2.jfif" alt="logo">
+		<img class="col_padding" src="<?= ACROCHAMP ?>/images/logo2.jfif" alt="logo">
 	</div>
 	<div class="rating_box content_div col_padding">
 		<div class="box_head">
@@ -53,7 +53,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
 								<div style="text-align: center;" class="col_1 contestant_place_<?= $i ?>"><?php echo $i; ?></div>
 								<div style="text-align: center;" class="r_country col_2">
 									<div class="col_4 no_padding country_with_img">
-										<img src="/Acrochamp/countries/<?= $sportmsen['country'] ?>.jpg" alt="<?= $sportmsen['country'] ?>">
+										<img src="<?= ACROCHAMP ?>/countries/<?= $sportmsen['country'] ?>.jpg" alt="<?= $sportmsen['country'] ?>">
 									</div>
 									<div class="col_4 no_padding"><?= $sportmsen['country'] ?></div>
 								</div>
@@ -88,7 +88,7 @@ require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
 								<div style="text-align: center;" class="col_1 contestant_place_<?= $i ?>"><?php echo $i; ?></div>
 								<div style="text-align: center;" class="r_country col_2">
 									<div class="col_4 no_padding country_with_img">
-										<img src="/Acrochamp/countries/<?= $sportmsen['country'] ?>.jpg" alt="<?= $sportmsen['country'] ?>">
+										<img src="<?= ACROCHAMP ?>/countries/<?= $sportmsen['country'] ?>.jpg" alt="<?= $sportmsen['country'] ?>">
 									</div>
 									<div class="col_4 no_padding"><?= $sportmsen['country'] ?></div>
 								</div>

@@ -66,11 +66,11 @@ if(isset($_POST['name']) && isset($_POST['password'])) {
 if(file_exists($refresh_url)) {
 	$result = 1;
 ?>
-<!--	<script src="/Acrochamp/modules/casual_judge/scripts.js" defer></script>-->
-	<script src="/Acrochamp/scripts/basic.js" defer></script>
-	<link rel="stylesheet" href="/Acrochamp/styles/basic.css">
-	<link rel="stylesheet" href="/Acrochamp/modules/casual_judge/styles.css">
-	<link rel="stylesheet" href="/Acrochamp/includes/bootstrap-sweetalert-master/dist/sweetalert.css">
+<!--	<script src="<?= ACROCHAMP ?>/modules/casual_judge/scripts.js" defer></script>-->
+	<script src="<?= ACROCHAMP ?>/scripts/basic.js" defer></script>
+	<link rel="stylesheet" href="<?= ACROCHAMP ?>/styles/basic.css">
+	<link rel="stylesheet" href="<?= ACROCHAMP ?>/modules/casual_judge/styles.css">
+	<link rel="stylesheet" href="<?= ACROCHAMP ?>/includes/bootstrap-sweetalert-master/dist/sweetalert.css">
 <?php
 	require($refresh_url);
 } else {
