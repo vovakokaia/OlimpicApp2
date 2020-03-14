@@ -1,4 +1,11 @@
 <?php
+@define('D_R', $_SERVER['DOCUMENT_ROOT']);
+
+if (strpos(D_R, 'Acrochamp')) {
+    @define(ACROCHAMP, "");
+} else {
+    @define(ACROCHAMP, "/Acrochamp");
+}
 require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/includes/basic/defines.php';
 require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/classes/mysql/mysql.php';
 

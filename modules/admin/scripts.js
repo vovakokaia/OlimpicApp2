@@ -763,7 +763,15 @@ $(window).on('load', () => {
 	$('#start').on('click', function() {
 		if(paused) {
 			$('.admin_pause_block').fadeIn();
-			get_ajax({'PAUSE' : 0, 'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 'JUDGE_ID' : $('#judge_id').val(), 'all' : true},'/modules/admin/ajax/set_pause.php','#calc_value','POST', 0);
+			get_ajax({'PAUSE' : 0, 
+						'CURRENT_SPORTSMEN' : $('#current_sportsmen').html(), 
+						'JUDGE_ID' : $('#judge_id').val(), 
+						'all' : true},
+						'/modules/admin/ajax/set_pause.php',
+						'#calc_value',
+						'POST', 
+						0);
+						
 			my_interval = setInterval(load_data, 1000);
 			$('.admin_overlay').fadeIn();
 			paused = false;

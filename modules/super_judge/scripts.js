@@ -293,7 +293,7 @@ let submit_form = (e) => {
 		}
 
 		query_object = {
-			"ID" : +$('#current_sportsmen').html().trim(),
+			"ID" :  +$('#current_sportsmen').html().trim(),
 			"A1" :  +$('.a span').eq(0).html(), 
 			"A2" :  +$('.a span').eq(1).html(), 
 			"A3" :  +$('.a span').eq(2).html(), 
@@ -398,12 +398,11 @@ $(document).ready(function() {
 		  'PENALTY' : query_object.Penalty,
 		  'TOTAL' : query_object.TOTAL,
 		  'CURRENT_SPORTSMEN' : $('#current_sportsmen').html()},'/modules/main_jury/ajax/ajax_main_judge.php','#low_juries','POST');
-		//console.log(query_object);
+		   console.log(query_object);
 	},1000);
 	
 	$('#submit').on('click', function(e) {
 		setTimeout(function() {
-			// console.log(query_object.TOTAL);
 			get_ajax({'ID' : query_object.ID,
 				  'A1' : query_object.A1,
 				  'A2' : query_object.A2,
@@ -428,6 +427,5 @@ $(document).ready(function() {
 			},20);
 			
 			submit_form(e);
-			debugger;
 	});
 });
