@@ -2,10 +2,11 @@
 require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/defines.php';
 require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/classes/mysql/mysql.php';
 //require_once $_SERVER['DOCUMENT_ROOT'].'/Acrochamp/includes/basic/current_sportsmen.php';
-if(!$_POST['datas']['all']) {
+var_dump($_POST);
+if(empty($_POST['datas']['all'])) {
 	if($_POST['datas']['PAUSE'] != 0) {
 		
-		if(!$_POST['datas']['JUDGE_ID']) {
+		if($_POST['datas']['JUDGE_ID']) {
 			mysql :: update('sportsmens',
 						"pause = ".$_POST['datas']['PAUSE'],
 						"id = '".$_POST['datas']['CURRENT_SPORTSMEN']."'");
@@ -32,6 +33,7 @@ if(!$_POST['datas']['all']) {
 					"pause = ".$_POST['datas']['PAUSE'],
 					"id = '".$sportsmens['id']."'");
 	}
+	
 	$users = mysql :: select('users');
 	
 	foreach($users as $users) {

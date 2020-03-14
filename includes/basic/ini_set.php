@@ -1,6 +1,8 @@
 <?php
-//Errors
+// Errors
  ini_set('display_errors', 'On');
  error_reporting(E_ALL);
  // Default Charset
  ini_set( 'default_charset', 'UTF-8' );
+ // Default Settings
+ ini_set('max_input_vars', 3000);
