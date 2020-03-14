@@ -1,4 +1,6 @@
 <?php
+
+require_once $_SERVER['DOCUMENT_ROOT'].'/require.php';
 require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/includes/basic/defines.php';
 require_once $_SERVER['DOCUMENT_ROOT'].ACROCHAMP.'/classes/mysql/mysql.php';
 
